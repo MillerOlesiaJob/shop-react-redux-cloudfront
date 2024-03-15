@@ -1,3 +1,8 @@
+# Task 2 Result information
+[S3 Bucket app link](http://miller-first-bucket.s3-website-eu-west-1.amazonaws.com/)
+[CliudFront app link](https://d2dic7yx76tk50.cloudfront.net/)
+Use npm command 'npm run serverless:deploy' to deploy changes to the S3 bucket and CloudFront. This command will run cache invalidation right after deploy since 'serverless-cloudfront-invalidate' plugin was configured in 'serverless.yml'
+
 # React-shop-cloudfront
 
 This is frontend starter project for nodejs-aws mentoring program. It uses the following technologies:
