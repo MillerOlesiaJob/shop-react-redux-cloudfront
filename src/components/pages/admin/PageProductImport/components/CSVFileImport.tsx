@@ -9,6 +9,8 @@ type CSVFileImportProps = {
 };
 
 export default function CSVFileImport({ url, title }: CSVFileImportProps) {
+  const authorization_token = localStorage.getItem("authorization_token");
+
   const [file, setFile] = React.useState<File>();
 
   const onFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -36,7 +38,11 @@ export default function CSVFileImport({ url, title }: CSVFileImportProps) {
       params: {
         name: encodeURIComponent(file.name),
       },
+      headers: {
+        Authorization: authorization_token,
+      },
     });
+
     console.log("File to upload: ", file.name);
     console.log("Uploading to: ", response.data);
     const result = await fetch(response.data, {
